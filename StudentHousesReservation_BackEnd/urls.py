@@ -19,7 +19,7 @@ from rest_framework.documentation import include_docs_urls
 from rest_framework.schemas import get_schema_view
 
 API_TITLE='Blog API'
-API_DESCRIPTION='A Web API for creating and editing blog posts'
+API_DESCRIPTION='A Web API for student houses reservation in a campus'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
