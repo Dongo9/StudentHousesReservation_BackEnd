@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c28cd4b5-c5f1-4d62-af11-f57863d2a89f" name="Default Changelist" comment="" />
+    <list default="true" id="c28cd4b5-c5f1-4d62-af11-f57863d2a89f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/StudentHousesReservation_BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StudentHousesReservation_BackEnd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="060c6e71-bec1-46af-9a42-6a098701a883" />
+  <component name="JupyterTrust" id="d822fa00-6774-42d4-941d-ec7d1f7c57c5" />
   <component name="ProjectId" id="1l8k3tnLtNULZUZ2XNdcCxHM8sY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,6 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606985909380</updated>
       <workItem from="1606985980506" duration="2383000" />
+      <workItem from="1607004443657" duration="948000" />
     </task>
     <servers />
   </component>
@@ -67,25 +73,38 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="726" height="208" key="GridCell.Tab.0.bottom" timestamp="1606988963427">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607004612539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004612539" />
+    <state width="1877" height="212" key="GridCell.Tab.0.bottom" timestamp="1607004860757">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="726" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606988963427" />
-    <state width="726" height="208" key="GridCell.Tab.0.center" timestamp="1606988963427">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="212" key="GridCell.Tab.0.bottom/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004860757" />
+    <state width="1877" height="212" key="GridCell.Tab.0.center" timestamp="1607004860757">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="726" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606988963427" />
-    <state width="726" height="208" key="GridCell.Tab.0.left" timestamp="1606988963427">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="212" key="GridCell.Tab.0.center/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004860757" />
+    <state width="1877" height="212" key="GridCell.Tab.0.left" timestamp="1607004860756">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="726" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606988963427" />
-    <state width="726" height="208" key="GridCell.Tab.0.right" timestamp="1606988963427">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="212" key="GridCell.Tab.0.left/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004860756" />
+    <state width="1877" height="212" key="GridCell.Tab.0.right" timestamp="1607004860757">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="726" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606988963427" />
-    <state x="517" y="56" key="SettingsEditor" timestamp="1606988837088">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="212" key="GridCell.Tab.0.right/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004860757" />
+    <state x="646" y="71" key="SettingsEditor" timestamp="1607004740267">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="517" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606988837088" />
+    <state x="646" y="71" key="SettingsEditor/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607004740267" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1607005385496">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-2560.-197.2560.1400@0.0.1920.1040" timestamp="1607005385496" />
   </component>
 </project>
