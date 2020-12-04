@@ -22,7 +22,7 @@ API_TITLE='Blog API'
 API_DESCRIPTION='A Web API for student houses reservation in a campus'
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin-iTyPostenD/', admin.site.urls),
     path('docs/', include_docs_urls(title=API_TITLE, description = API_DESCRIPTION)),
     path('schema/', get_schema_view(title=API_TITLE)),
 ]
