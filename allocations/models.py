@@ -1,10 +1,10 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
 class Allocation(models.Model):
-
     # ENUMS DEFINITION
     class Neighborhood(models.TextChoices):
         NERVOSO = 'NRV', _('Nervoso')
@@ -34,6 +34,8 @@ class Allocation(models.Model):
         choices=RoomType.choices,
         default=RoomType.SINGLE,
     )
+
+    student = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     # AS JAVA TOSTRING
     def __str__(self):
