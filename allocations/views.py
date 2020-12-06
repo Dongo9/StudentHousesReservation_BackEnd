@@ -3,7 +3,8 @@ from rest_framework import generics, viewsets, permissions
 from rest_framework.permissions import IsAuthenticated
 
 from allocations.models import Allocation
-from allocations.permissions import IsPreferenceAuthorOrReadOnly, IsPreferenceAuthor
+from allocations.permissions import IsPreferenceAuthorOrReadOnly, IsPreferenceAuthor, IsPermittedOnPost, \
+    IsPermittedOnPostAndPermittedAuthor
 from allocations.serializers import AllocationSerializer
 
 
@@ -34,7 +35,20 @@ class PreferencesByStudentViewSet(viewsets.ModelViewSet):
         return Allocation.objects.filter(student=self.request.user)
 
 
-class PreferencesStudent(viewsets.ModelViewSet):
+class PreferencesEditorViewSet(viewsets.ModelViewSet):
     permission_classes = [IsPreferenceAuthor]
     queryset = Allocation.objects.all()
     serializer_class = AllocationSerializer
+
+class PostAllocationPermissionViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsPermittedOnPost]
+    queryset = Allocation.objects.all()
+    serializer_class = AllocationSerializer
+
+# StudentAllocationViewSet: DEFINITIVA PER STUDENTE CHE VEDE SUA PREFERENZA
+class StudentAllocationViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsPermittedOnPostAndPermittedAuthor]
+    serializer_class = AllocationSerializer
+
+    def get_queryset(self):
+        return Allocation.objects.filter(student=self.request.user)
