@@ -12,6 +12,9 @@ pyyaml = "*"
 dj-rest-auth = "*"
 django-allauth = "*"
 permission = "*"
+pytest = "*"
+pytest-django = "*"
+mixer = "*"
 
 [dev-packages]
 

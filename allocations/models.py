@@ -26,13 +26,13 @@ class Allocation(models.Model):
     neighborhood = models.CharField(
         max_length=3,
         choices=Neighborhood.choices,
-        default=Neighborhood.MARTENSSON_A,
+        #default=Neighborhood.MARTENSSON_A,
     )
 
     room_type = models.CharField(
         max_length=3,
         choices=RoomType.choices,
-        default=RoomType.SINGLE,
+        #default=RoomType.SINGLE,
     )
 
     student = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
