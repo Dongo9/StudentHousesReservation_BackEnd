@@ -6,6 +6,7 @@ from allocations.models import Allocation
 from allocations.permissions import IsPermittedOnPostAndPermittedAuthor, IsTheCake, IsPermittedViewStudentsAllocations
 from allocations.serializers import AllocationSerializer
 
+
 class HoneyPotViewSet(viewsets.ModelViewSet):
     permission_classes = [IsTheCake, IsAuthenticated]
     serializer_class = AllocationSerializer
@@ -13,12 +14,14 @@ class HoneyPotViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         return None
 
+
 # SAO: Student Administration Office
 class SAOAllocationViewSet(viewsets.ModelViewSet):
     permission_classes = [IsPermittedViewStudentsAllocations, IsAuthenticated]
 
     queryset = Allocation.objects.all()
     serializer_class = AllocationSerializer
+
 
 class StudentAllocationViewSet(viewsets.ModelViewSet):
     permission_classes = [IsPermittedOnPostAndPermittedAuthor]
