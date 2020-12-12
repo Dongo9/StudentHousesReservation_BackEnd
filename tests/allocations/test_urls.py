@@ -1,6 +1,7 @@
 import json
 
 import pytest
+from django.contrib.auth.models import Group, Permission
 from django.urls import reverse
 from mixer.backend.django import mixer
 from rest_framework.status import HTTP_403_FORBIDDEN, HTTP_200_OK
@@ -35,7 +36,8 @@ def contains(response, key, value):
         return False
     return value in obj[key]
 
-#PER L'HONEY POT NESSUNO HA MAI L'AUTORIZZAZIONE (TEST DICIAMO INUTILE)
+
+# PER L'HONEY POT NESSUNO HA MAI L'AUTORIZZAZIONE (TEST DICIAMO INUTILE)
 def test_allocations_anon_user_get_nothing():
     path = reverse('allocations-list')
     client = get_client()
@@ -44,21 +46,40 @@ def test_allocations_anon_user_get_nothing():
     assert response.status_code == HTTP_403_FORBIDDEN
     assert contains(response, 'detail', 'credentials were not provided')
 
-#DA SISTEMARE
-#DA PROVARE IN UNA PAGINA DOVE POSSIAMO ELENCARE TUTTI LE ALLOCATIONS (NELLA PAGINA ALLOCATIONS DA' 403 PERCHE' NESSUNO E' AUTORIZZATO)
-def test_allocations_anon_user_get_nothing2(allocations):
-    path = reverse('allocations-detail', kwargs={'pk': allocations[0].pk})
-    client = get_client(allocations[0].student)
-    response = client.get(path)
-    assert response.status_code == HTTP_200_OK
-    obj = parse(response)
-    assert allocations[0].neighborhood.__len__() == 3
 
-#DA COMPLETARE SECONDO I PERMESSI
-def test_allocations_anon_user_get_nothing3():
-    path = reverse('student-allocation-list')
+# PER SAO-ALLOCATIONS
+def test_SAO_allocations_anon_user_get_nothing():
+    path = reverse('SAO-allocations-list')
     client = get_client()
     response = client.get(path)
     print("PATH: " + path)
     assert response.status_code == HTTP_403_FORBIDDEN
     assert contains(response, 'detail', 'credentials were not provided')
+
+
+# PER ALLOCATIONS STUDENTE
+def test_student_allocations_anon_user_get_nothing():
+    path = reverse('student-allocation-perm-list')
+    client = get_client()
+    response = client.get(path)
+    print("PATH: " + path)
+    assert response.status_code == HTTP_403_FORBIDDEN
+    assert contains(response, 'detail', 'credentials were not provided')
+
+
+def test_allocations_student_gets_his_allocation_details(allocations):
+    path = reverse('student-allocation-perm-detail', kwargs={'pk': allocations[0].pk})
+    group = Group(name='Students')
+    group.save()
+    perm = Permission.objects.get(name='Can view allocation')
+    group.permissions.add(perm)
+    prova = allocations[0].student
+    prova.groups.add(group)
+    prova.save()
+    client = get_client(prova)
+    response = client.get(path)
+    assert response.status_code == HTTP_200_OK
+    obj = parse(response)
+    assert allocations[0].neighborhood.__len__() == 3
+
+

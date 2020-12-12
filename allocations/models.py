@@ -39,4 +39,4 @@ class Allocation(models.Model):
 
     # AS JAVA TOSTRING
     def __str__(self):
-        return self.neighborhood + " " + self.room_type
+        return self.neighborhood + " " + self.room_type + " " + self.student.__str__()
