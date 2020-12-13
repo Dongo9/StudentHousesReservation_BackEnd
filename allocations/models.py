@@ -26,7 +26,7 @@ class Allocation(models.Model):
     neighborhood = models.CharField(
         max_length=3,
         choices=Neighborhood.choices,
-        #default=Neighborhood.MARTENSSON_A,
+        default=Neighborhood.MARTENSSON_A,
     )
 
     room_type = models.CharField(
