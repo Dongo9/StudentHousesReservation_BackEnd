@@ -42,19 +42,20 @@ class EmployeeViewsAllUserReservationList(generics.ListAPIView):
     serializer_class = EmployeeReservationListSerializer
 
 
-class EmployeeViewsUserReservationList(generics.ListAPIView):
+class EmployeeViewsSingleUserReservation(generics.ListAPIView):
     permission_classes = [IsEmployee]
     serializer_class = EmployeeReservationListSerializer
 
     def get_queryset(self):
         user = self.kwargs['user']
+        print(user)
         return Reservation.objects.filter(user=user)
 
 
 class EmployeeEditReservationList(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsEmployee]
     queryset = Reservation.objects.all()
-    serializer_class = EmployeeUserListSerializer
+    serializer_class = StudentEditReservationSerializer
 
 
 # Student views

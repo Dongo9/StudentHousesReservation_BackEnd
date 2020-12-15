@@ -24,6 +24,7 @@ class EmployeeUserListSerializer(serializers.ModelSerializer):
         fields = ('id', 'username', 'email', 'is_staff', 'groups')
         model = get_user_model()
 
+
 # List of all student for the Employee
 class EmployeeStudentListSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,14 +39,14 @@ class StudentReservationSerializer(serializers.ModelSerializer):
         model = Reservation
 
 
-# Show reservation of the current student (user)
+# Add reservation for the current student (user)
 class StudentAddReservationSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'neighborhood', 'room_type')
         model = Reservation
 
 
-# Edit reservation of the current student (user)
+# Edit reservation for the current student (user)
 class StudentEditReservationSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ('id', 'neighborhood', 'room_type')

@@ -2,7 +2,7 @@
 from django.urls import re_path, path
 
 from student_house_reservation.views import EmployeeViewsUserList, EmployeeViewsAllUserReservationList, \
-    EmployeeViewsUserReservationList, StudentViewsOwnReservationList, StudentAddReservationList, \
+    EmployeeViewsSingleUserReservation, StudentViewsOwnReservationList, StudentAddReservationList, \
     StudentEditReservationList, TheCakeIsALie, EmployeeEditReservationList, EmployeeViewsStudentList
 
 urlpatterns = [
@@ -47,11 +47,11 @@ urlpatterns = [
     path('__________________________________________/', TheCakeIsALie.as_view()),
 
     # Employee urls
-    re_path('user-list/', EmployeeViewsUserList.as_view()),
-    re_path('student-list/', EmployeeViewsStudentList.as_view()),
-    re_path('reservation-list/', EmployeeViewsAllUserReservationList.as_view()),
-    re_path('reservation-list/user/(?P<user>\\d+)/', EmployeeViewsUserReservationList.as_view()),
-    path('reservation-list/user/edit/<int:pk>/', EmployeeEditReservationList.as_view()),
+    path('user-list/', EmployeeViewsUserList.as_view()),
+    path('student-list/', EmployeeViewsStudentList.as_view()),
+    re_path('reservation-list/user/(?P<user>\\d+)/', EmployeeViewsSingleUserReservation.as_view()),
+    path('reservation-list/edit/<int:pk>/', EmployeeEditReservationList.as_view()),
+    path('reservation-list/', EmployeeViewsAllUserReservationList.as_view()),
 
     # Student urls
     path('reservation-list/', StudentViewsOwnReservationList.as_view()),
