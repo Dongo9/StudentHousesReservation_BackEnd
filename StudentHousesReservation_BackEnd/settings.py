@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'corsheaders',
 
-    'allocations.apps.AllocationsConfig',
+    'student_house_reservation.apps.StudentHouseReservationsConfig',
 ]
 
 MIDDLEWARE = [

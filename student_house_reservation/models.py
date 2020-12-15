@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
-class Allocation(models.Model):
+class Reservation(models.Model):
     # ENUMS DEFINITION
     class Neighborhood(models.TextChoices):
         NERVOSO = 'NRV', _('Nervoso')
@@ -35,8 +35,8 @@ class Allocation(models.Model):
         default=RoomType.SINGLE,
     )
 
-    student = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     # AS JAVA TOSTRING
     def __str__(self):
-        return self.neighborhood + " " + self.room_type
+        return "Username: " + str(self.user.username) + ", Neighbourhood: " + self.neighborhood + ", Room_Type: " + self.room_type
