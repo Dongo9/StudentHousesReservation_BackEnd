@@ -54,7 +54,7 @@ urlpatterns = [
     path('reservation-list/', EmployeeViewsAllUserReservationList.as_view()),
 
     # Student urls
-    path('reservation-list/', StudentViewsOwnReservationList.as_view()),
-    path('reservation-list/add/', StudentAddReservationList.as_view()),
-    path('reservation-list/edit/<int:pk>/', StudentEditReservationList.as_view()),
+    path('reservation-student/', StudentViewsOwnReservationList.as_view()),
+    path('reservation-student/add/', StudentAddReservationList.as_view()),
+    path('reservation-student/edit/<int:pk>/', StudentEditReservationList.as_view()),
 ]
