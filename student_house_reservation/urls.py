@@ -2,8 +2,8 @@
 from django.urls import re_path, path
 
 from student_house_reservation.views import EmployeeViewsUserList, EmployeeViewsAllUserReservationList, \
-    EmployeeViewsSingleUserReservation, StudentViewsOwnReservationList, StudentAddReservationList, \
-    StudentEditReservationList, TheCakeIsALie, EmployeeEditReservationList, EmployeeViewsStudentList
+    StudentViewsOwnReservationList, StudentAddReservationList, \
+    StudentEditReservationList, TheCakeIsALie, EmployeeViewsStudentList
 
 urlpatterns = [
     # HoneyPot urls
@@ -28,9 +28,9 @@ urlpatterns = [
     path('____---------HONEY_SWEET_HONEY---------____/', TheCakeIsALie.as_view()),
     path('-----------------I-LETS-GO-----------------/', TheCakeIsALie.as_view()),
     path('reservation/', TheCakeIsALie.as_view()),
-    path('reservations/', TheCakeIsALie.as_view()),
+    path('student_house_reservation/', TheCakeIsALie.as_view()),
     path('students-reservation/', TheCakeIsALie.as_view()),
-    path('student-reservations/', TheCakeIsALie.as_view()),
+    path('student-student_house_reservation/', TheCakeIsALie.as_view()),
     path('students/', TheCakeIsALie.as_view()),
     path('users/', TheCakeIsALie.as_view()),
     path('employees/', TheCakeIsALie.as_view()),
@@ -47,14 +47,14 @@ urlpatterns = [
     path('__________________________________________/', TheCakeIsALie.as_view()),
 
     # Employee urls
-    path('user-list/', EmployeeViewsUserList.as_view()),
-    path('student-list/', EmployeeViewsStudentList.as_view()),
-    re_path('reservation-list/user/(?P<user>\\d+)/', EmployeeViewsSingleUserReservation.as_view()),
-    path('reservation-list/edit/<int:pk>/', EmployeeEditReservationList.as_view()),
-    path('reservation-list/', EmployeeViewsAllUserReservationList.as_view()),
+    path('user-list/', EmployeeViewsUserList.as_view()),  #
+    path('student-list/', EmployeeViewsStudentList.as_view()),  #
+    # re_path('reservation-list/user/(?P<user>\\d+)/', EmployeeViewsSingleUserReservation.as_view()),
+    # path('reservation-list/edit/<int:pk>/', EmployeeEditReservationList.as_view()),
+    path('reservation-list/', EmployeeViewsAllUserReservationList.as_view()),  #
 
     # Student urls
-    path('reservation-student/', StudentViewsOwnReservationList.as_view()),
-    path('reservation-student/add/', StudentAddReservationList.as_view()),
-    path('reservation-student/edit/<int:pk>/', StudentEditReservationList.as_view()),
+    path('reservation-student/', StudentViewsOwnReservationList.as_view()),  #
+    path('reservation-student/add/', StudentAddReservationList.as_view()),  #
+    path('reservation-student/edit/<int:pk>/', StudentEditReservationList.as_view()),  #
 ]
